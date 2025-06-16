@@ -11,3 +11,121 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.jumbo {
+  width: 100%;
+}
+
+.content {
+  padding: 0 1vw;
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.404);
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6vw;
+  width: 20%;
+  background-color: rgba(95, 158, 160, 0.24);
+  height: 9vh;
+  font-weight: 500;
+  font-size: 1.5vw;
+}
+
+.mycontainer {
+  padding: 1vw 1vw;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1;
+  column-gap: 1vw;
+}
+
+.box1 {
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.404);
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box2 {
+  border: 1px solid rgba(0, 0, 0, 0.247);
+  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.404);
+  height: 85vh;
+}
+
+.puzzle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: min-content;
+  column-gap: 1vw;
+  row-gap: 1vw;
+}
+
+.b1 {
+  padding-top: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.b2 {
+  padding-top: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 8vw;
+  height: 25vh;
+  perspective: 1000px;
+  /* enables 3D flip */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.front {
+  background-color: aqua;
+  transform: rotateY(180deg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.back {
+  background-color: cadetblue;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
