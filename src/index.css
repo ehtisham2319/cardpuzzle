@@ -129,3 +129,57 @@ code {
   background-position: center;
   background-size: cover;
 }
+@media screen and (max-width: 768px) {
+  .mycontainer {
+    display: flex;
+    flex-direction: column-reverse; /* box1 below, box2 above */
+    padding: 2vw;
+    row-gap: 2vw;
+  }
+
+  .box1,
+  .box2 {
+    height: auto;
+    min-height: 50vh;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .puzzle {
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 2 columns for buttons */
+    column-gap: 2vw;
+    row-gap: 2vw;
+    justify-content: center;
+  }
+
+  .card {
+    width: 20vw; /* smaller cards for mobile */
+    height: 20vh;
+    background-size: contain;
+  }
+
+  .front,
+  .back {
+    font-size: 1rem; /* reduce font size */
+  }
+
+  .content {
+    flex-direction: column;
+    height: auto;
+    padding: 2vw;
+    text-align: center;
+  }
+
+  .result {
+    width: 90%;
+    font-size: 1.2rem;
+    margin: 2vw 0 0 0;
+    height: auto;
+    padding: 1vw;
+  }
+
+  .b1,
+  .b2 {
+    padding-top: 2vw;
+    justify-content: center;
+  }
+}
