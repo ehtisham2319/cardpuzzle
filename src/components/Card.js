@@ -1,8 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import Carditem from './Carditem';
 
-
 function Card() {
+    // adding the cutom button code here
+    const [deferredPrompt, setDeferredPrompt] = useState(null);
+    const [showInstallButton, setShowInstallButton] = useState(false);
+
+    useEffect(() => {
+        const handler = (e) => {
+            e.preventDefault();
+            console.log('beforeinstallprompt event fired');
+            setDeferredPrompt(e);
+            setShowInstallButton(true);
+        };
+
+        window.addEventListener('beforeinstallprompt', handler);
+
+        return () => window.removeEventListener('beforeinstallprompt', handler);
+    }, []);
+
+    const handleInstallClick = () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+                setDeferredPrompt(null);
+                setShowInstallButton(false);
+            });
+        }
+    };
+    //end the cutom btn code here
     const [card, setCard] = useState([])
     const [targetId, setTargetId] = useState(4);
     const [level, setLevel] = useState('Easy');
@@ -226,6 +258,24 @@ function Card() {
         <div className="jumbo">
             <div className="content">
                 <h3>Card Matching Puzzle</h3>
+
+                {showInstallButton && (
+                    <button
+                        onClick={handleInstallClick}
+                        style={{
+                            padding: '8px 16px',
+                            fontSize: '14px',
+                            backgroundColor: '#007bff',
+                            color: 'white',
+                            border: 'none',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            marginLeft: 'auto'
+                        }}
+                    >
+                        Install App
+                    </button>
+                )}
                 <div className="result" aria-live="polite">{result}</div>
                 <div className="result">Total Score: {totalscore}</div>
                 <div className="result">High Score: {highscore}</div>
