@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/cardpuzzle/static/css/main.de2a7440.css",
-    "main.js": "/cardpuzzle/static/js/main.e99c3557.js",
+    "main.js": "/cardpuzzle/static/js/main.8e3dc57f.js",
     "static/js/453.067e4c03.chunk.js": "/cardpuzzle/static/js/453.067e4c03.chunk.js",
     "index.html": "/cardpuzzle/index.html",
     "main.de2a7440.css.map": "/cardpuzzle/static/css/main.de2a7440.css.map",
-    "main.e99c3557.js.map": "/cardpuzzle/static/js/main.e99c3557.js.map",
+    "main.8e3dc57f.js.map": "/cardpuzzle/static/js/main.8e3dc57f.js.map",
     "453.067e4c03.chunk.js.map": "/cardpuzzle/static/js/453.067e4c03.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.de2a7440.css",
-    "static/js/main.e99c3557.js"
+    "static/js/main.8e3dc57f.js"
   ]
 }
